@@ -1,16 +1,16 @@
-package com.monopolygame.gamedependencies;
+package com.monopolygame.gamedependencies.players;
 
-public class Player {
+import com.monopolygame.gamedependencies.players.interfaces.Player;
+
+public class Computer implements Player {
     private final String name;
     private int currentTile;
     private int credits;
-    private final boolean isComputer;
 
-    public Player(String name, int currentTile, int credits, boolean isComputer) {
+    public Computer(String name, int currentTile, int credits, boolean isHuman) {
         this.name = name;
         this.currentTile = currentTile;
         this.credits = credits;
-        this.isComputer = isComputer;
     }
 
     public void getPaid(int payment) {
@@ -21,8 +21,8 @@ public class Player {
         credits -= sumToPay;
     }
 
-    public void setCurrentTile(int currentTile) {
-        this.currentTile = currentTile;
+    public void setCurrentTile(int newTile) {
+        this.currentTile = newTile;
     }
 
     public int getCurrentTile() {
@@ -37,7 +37,7 @@ public class Player {
         return this.name;
     }
 
-    public boolean getIsComputer() {
-        return this.isComputer;
+    public boolean makeDecision(String type) {
+        return true;
     }
 }

@@ -1,7 +1,7 @@
 package com.monopolygame.game;
 
 import com.monopolygame.gamedependencies.Dice;
-import com.monopolygame.gamedependencies.Player;
+import com.monopolygame.gamedependencies.players.Player;
 
 import java.util.ArrayList;
 
