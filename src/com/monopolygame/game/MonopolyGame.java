@@ -22,7 +22,11 @@ public class MonopolyGame {
     }
 
     public void startGame() {
-        System.out.println("Temp");
+        d1.roll();
+        d2.roll();
+
+        int firstValue = d1.getValue();
+        int secondValue = d2.getValue();
     }
 
     private void play(Player player, Board board) {
