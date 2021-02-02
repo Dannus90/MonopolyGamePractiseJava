@@ -13,16 +13,35 @@ public class UserInterFace {
         return numberOfPlayers;
     }
 
-    private String createPlayerName() {
+    public String createPlayerName() {
         System.out.println("Please enter the player name: ");
         Scanner sc = new Scanner(System.in);
 
+        // Validate name input here later.
         String playerName = sc.nextLine();
 
         return playerName;
     }
 
-    playerMoves(String name, numberOfSteps) {
+    public void playerMoves(String name, int numberOfSteps) {
         System.out.println(name + " moves");
+    }
+
+    public void displayMaxRoundsVictory(String playerName, int credits) {
+
+    }
+
+    public void displayCreditChange(boolean creditsAdded, int amount, String playerName) {
+        if(creditsAdded) {
+            String output = String.format("%s earned a total of %s credits", playerName, amount);
+            System.out.println(output);
+        } else {
+            String output = String.format("%s had to pay a total of %s credits", playerName, amount);
+            System.out.println(output);
+        }
+    }
+
+    public void displayBankrubtVictory(String winningPlayerName, String losingPlayerName, int credits) {
+
     }
 }

@@ -2,15 +2,15 @@ package com.monopolygame.gamedependencies.players;
 
 import com.monopolygame.gamedependencies.players.interfaces.Player;
 
-public abstract class AbsPlayer implements Player {
+public abstract class PlayerBase implements com.monopolygame.gamedependencies.players.interfaces.Player {
     private final String name;
     private int currentTile;
     private int credits;
 
-    public AbsPlayer(String name, int currentTile, int credits) {
+    public PlayerBase(String name) {
         this.name = name;
-        this.currentTile = currentTile;
-        this.credits = credits;
+        this.currentTile = 0;
+        this.credits = 1000;
     }
 
     public void getPaid(int payment) {

@@ -1,17 +1,18 @@
 package com.monopolygame.game;
 
 import com.monopolygame.gamedependencies.Dice;
-import com.monopolygame.gamedependencies.players.Computer;
-import com.monopolygame.gamedependencies.players.Human;
+import com.monopolygame.gamedependencies.players.ComputerPlayer;
+import com.monopolygame.gamedependencies.players.HumanPlayer;
+import com.monopolygame.gamedependencies.players.PlayerBase;
 import com.monopolygame.gamedependencies.players.interfaces.Player;
 
 import java.util.ArrayList;
 
 public class MonopolyGame {
-    private Dice d1;
-    private Dice d2;
+    private final Dice d1;
+    private final Dice d2;
     private int numberOfPlayers;
-    private ArrayList<Player> players;
+    private ArrayList<Player> players = new ArrayList<Player>();
     private UserInterFace ui;
     private int currentPlayerNumber;
     private Board board;
@@ -21,17 +22,18 @@ public class MonopolyGame {
         this.d2 = d2;
         this.ui = ui;
         this.board = board;
-
-        Computer computer1 = new Computer("Tamimosaurus", 0, 1000);
-        Human player1 = new Human("Daniel", 0, 1000);
-
-        players.add(computer1);
-        players.add(player1);
     }
 
     public void startGame() {
         d1.roll();
         d2.roll();
+
+        ComputerPlayer computer1 = new ComputerPlayer("Tamimosaurus");
+        HumanPlayer player1 = new HumanPlayer("Daniel");
+        ui.displayCreditChange(true, 500, computer1.getName());
+
+        players.add(computer1);
+        players.add(player1);
 
         int firstValue = d1.getValue();
         int secondValue = d2.getValue();
