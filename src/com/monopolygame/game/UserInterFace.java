@@ -41,6 +41,14 @@ public class UserInterFace {
         }
     }
 
+    public void payRent(int amount, String payingPlayer, String paidPlayer) {
+        String output = String.format("%s had to pay %s %s credits", payingPlayer, paidPlayer, amount);
+    }
+
+    public void buyProperty(int amount, String playerName, String streetName) {
+        String output = String.format("%s bought %s for a total of %s credits", playerName, streetName, amount);
+    }
+
     public void displayBankrubtVictory(String winningPlayerName, String losingPlayerName, int credits) {
 
     }
