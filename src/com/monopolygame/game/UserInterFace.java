@@ -21,4 +21,8 @@ public class UserInterFace {
 
         return playerName;
     }
+
+    playerMoves(String name, numberOfSteps) {
+        System.out.println(name + " moves");
+    }
 }
