@@ -29,7 +29,13 @@ public class UserInterFace {
     }
 
     public void displayMaxRoundsVictory(String playerName, int credits) {
+        String output = String.format("The maximum amount of rounds has been reached. The winner is %s who had a total of %s credits", playerName, credits);
+        System.out.println(output);
+    }
 
+    public void displayBankrubtVictory(String winningPlayer, String losingPlayer, int credits) {
+        String output = String.format("The player %s went out of credits so the game is over. The player with most credits %s therefor won the game with a total of %s", losingPlayer, winningPlayer, credits);
+        System.out.println(output);
     }
 
     public boolean isHuman() {
@@ -61,9 +67,5 @@ public class UserInterFace {
     public void buyProperty(int amount, String playerName, String streetName) {
         String output = String.format("%s bought %s for a total of %s credits", playerName, streetName, amount);
         System.out.println(output);
-    }
-
-    public void displayBankrubtVictory(String winningPlayerName, String losingPlayerName, int credits) {
-
     }
 }

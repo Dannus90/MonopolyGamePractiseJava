@@ -4,15 +4,15 @@ import com.monopolygame.gamedependencies.Dice;
 import com.monopolygame.gamedependencies.players.ComputerPlayer;
 import com.monopolygame.gamedependencies.players.HumanPlayer;
 import com.monopolygame.gamedependencies.players.PlayerBase;
-import com.monopolygame.gamedependencies.players.interfaces.Player;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class MonopolyGame {
     private final Dice d1;
     private final Dice d2;
     private int numberOfPlayers;
-    private ArrayList<Player> players = new ArrayList<Player>();
+    private ArrayList<PlayerBase> players = new ArrayList<PlayerBase>();
     private UserInterFace ui;
     private int currentPlayerNumber;
     private Board board;
@@ -39,7 +39,13 @@ public class MonopolyGame {
         int secondValue = d2.getValue();
     }
 
-    private void play(Player player, Board board) {
+    private void play(PlayerBase player, Board board) {
         System.out.println("Temp");
     }
-}
+
+    private PlayerBase getWinningPlayer() {
+        PlayerBase winningPlayer = players.stream().max(Comparator.comparingInt(PlayerBase::getCredits));
+        return winningPlayer;
+    }
+
+

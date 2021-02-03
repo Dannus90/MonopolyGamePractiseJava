@@ -1,8 +1,6 @@
 package com.monopolygame.gamedependencies.players;
 
-import com.monopolygame.gamedependencies.players.interfaces.Player;
-
-public abstract class PlayerBase implements com.monopolygame.gamedependencies.players.interfaces.Player {
+public abstract class PlayerBase {
     private final String name;
     private int currentTile;
     private int credits;
