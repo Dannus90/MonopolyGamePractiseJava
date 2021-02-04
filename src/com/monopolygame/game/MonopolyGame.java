@@ -7,6 +7,7 @@ import com.monopolygame.gamedependencies.players.PlayerBase;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Optional;
 
 public class MonopolyGame {
     private final Dice d1;
@@ -43,9 +44,9 @@ public class MonopolyGame {
         System.out.println("Temp");
     }
 
-    private PlayerBase getWinningPlayer() {
-        PlayerBase winningPlayer = players.stream().max(Comparator.comparingInt(PlayerBase::getCredits));
+    /* private PlayerBase getWinningPlayer() {
+        Optional<PlayerBase> winningPlayer = players.stream().max(Comparator.comparingInt(PlayerBase::getCredits));
         return winningPlayer;
-    }
-
+    } */
+}
 
