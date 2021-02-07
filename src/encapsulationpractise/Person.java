@@ -1,24 +1,21 @@
 package encapsulationpractise;
 
 public class Person {
-    private String firstName;
-    private String lastName;
+    private final Name name = new Name();
 
     public String getLastName() {
-        return lastName;
+        return name.getLastName();
     }
 
-    public void setLastName(String lastName, Name name) throws Exception {
+    public void setLastName(String lastName) throws Exception {
         name.setLastName(lastName);
-        this.lastName = name.getLastName();
     }
 
     public String getFirstName() {
-        return firstName;
+        return name.getFirstName();
     }
 
-    public void setFirstName(String firstName, Name name) throws Exception {
+    public void setFirstName(String firstName) throws Exception {
         name.setFirstName(firstName);
-        this.firstName = name.getFirstName();
     }
 }
